@@ -72,3 +72,10 @@ a:hover{
     opacity: 1;
     transition: 0.5s;
 }
+
+#copybutton1:hover{
+    background-color: rgb(206, 204, 204);
+}
+#copybutton2:hover{
+    background-color: rgb(202, 202, 202);
+}
