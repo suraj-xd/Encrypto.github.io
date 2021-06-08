@@ -21,9 +21,9 @@
         <a id="generate" class="generate" href="#" style="background-color:rgb(0, 183, 255)" onclick="generator()">Generate</a> <br><br>
         
         <div style="visibility: hidden;" class="showpopop">
-            <h2>Encripted Code:   <button id="copybutton1" style="border: 1px solid grey; padding: 4px 4px; border-radius: 8px;">📄</button></h2>
-            <p style="    overflow: scroll;" id="IncriptedText"></p><br>
-            <h2>Key:    <button id="copybutton2"style="border: 1px solid grey; padding: 4px 4px; border-radius: 8px;">📄</button></h2> 
+            <h2>Encripted Code:   <button id="copybutton1" style="border: 1px solid grey; padding: 4px 4px; border-radius: 8px;" onclick="copyElementText()">📄</button></h2>
+            <p style="    overflow: scroll;" class="right-side-header" title="Copy Text"  id="IncriptedText"></p><br>
+            <h2>Key:    <button id="copybutton2"style="border: 1px solid grey; padding: 4px 4px; border-radius: 8px;" onclick="copyKeyText()">📄</button></h2> 
             <h3 id="keyvalue"></h3>
         </div>
         <a href="#" onclick="toggle1()">Close</a>
@@ -48,13 +48,38 @@
             popup1.classList.toggle('active');
             let showpopup = document.querySelector('.showpopop');
             showpopup.style.visibility = 'hidden';
+            var IncriptedText = document.getElementById('IncriptedText');
+            IncriptedText.value = "";
+            
         }
         function toggle2() {
                 var blur = document.getElementById('blur');
                 blur.classList.toggle('active');
                 var popup2 = document.getElementById('popup2');
                 popup2.classList.toggle('active');
+                let inputtxt = document.querySelector(".inputtxt");
+                inputtxt.value = "";
             }
+
+        function copyElementText() {
+                var text = document.querySelector('#IncriptedText').innerText;
+                var elem = document.createElement("textarea");
+                document.body.appendChild(elem);
+                elem.value = text;
+                elem.select();
+                document.execCommand("copy");
+                document.body.removeChild(elem);
+            }
+        function copyKeyText() {
+                var text = document.querySelector('#keyvalue').innerText;
+                var elem = document.createElement("textarea");
+                document.body.appendChild(elem);
+                elem.value = text;
+                elem.select();
+                document.execCommand("copy");
+                document.body.removeChild(elem);
+        }
+        
     </script>
 </body>
 </html>
