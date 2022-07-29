@@ -1,5 +1,8 @@
-# Encrypto.github.io
+#Encrypto
 
-It is a website to Encrypt your texts and send it to anyone.
+This web application can be used to generate a _encrypted message_ so that message is unreadable
+untill the reciever read text on website with message and key .
 
-if they have the key, it'll be readable.
+Built upon Pure `HTML` `CSS` `JAVASCRIPT`
+
+Try Here: https://suraj-xd.github.io/Encrypto.github.io/
